@@ -1,41 +1,64 @@
-class A extends B{ //supa class
-int x = 10 ;
-C(this.x){print('Constr of class C');}
- void showinfo() => print('X = $x, Y = $y') ;
-@overtide
+//3651051541155 ภูวกร รุ่งปิติศุภากร
 
-String toString() => "Object FROM class A" ;
+abstract class Insect{
+void walk(){
+  print('เดิน');
 }
-
-class B extends C{
-  int y ;
-  B(this.x):super(x){print('Constr of class C');}
-  void showinfo() => print('X = $x, Y = $y') ;
-@overtide
-String toString() => "Object FROM class B" ;
 
 }
 
-class C extends A{
-int x = 3 ;
-  C(this.x){print('Constr of class C');}
-   void showinfo() => print('X = $x, Y = $y') ;
-@overtide
-String toString() => "Object FROM class C" ;
+//Bird
+abstract class Bird{ 
+  void chirp() {
+    print('chirp chirp');
+  } //duplicate method
+  void flutter(){ 
+    print('fluttering'); }
+  }
 
+mixin Fluttering { 
+  void flutter() {
+     print('fluttering'); } }
+abstract class AirborneInsect with Fluttering { 
+  void buzz() { 
+    print('buzzing annoyingly'); } }
+
+  class Swallow extends Bird  {
+     void doSwallowThing(){ 
+      chirp();
+      flutter();
+      print('eating a mosquito');
+     }
+  }
+
+mixin CanFly {
+void fly(){
+  print("Flying");
+}
 
 }
 
+abstract class Airinsect extends Insect {
+  void fly(){
+  print('ปีน');
+}
 
-void main (list<String>args){
-var C ();
-var B ();
-var A ();
-A showinfo()  ;
- B showinfo()  ;
-  C showinfo()  ;
-print a (('x= $(B.x) y= $(B.y)'));
-print (C.x) ;
-print (A.x) ;
+void blood(){
+  print('เกิดโรค');
+}
+}
+class Mosquito extends Airinsect {
+void doMosquitoTing(){
+walk();
+fly();
+blood();
+print('ดูดเลือด');
+}
+
+void main(List<String>args){
+
+//var Mosquito
+
+}
 
 }
